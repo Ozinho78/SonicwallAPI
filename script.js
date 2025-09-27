@@ -102,20 +102,21 @@ async function loadSystemStatus() {
 }
 
 // Firmware
-async function loadDeviceInfo() {
-  const data = await fetchData("/firmware/base");
-  const container = document.getElementById("device-info");
+// async function loadDeviceInfo() {
+//   const data = await fetchData("/firmware/base");
+//   const container = document.getElementById("device-info");
+//   console.log("Device Info Data:", data);
 
-  if (data && data.firmware) {
-    container.innerHTML = `
-      <p><strong>Version:</strong> ${data.firmware.version}</p>
-      <p><strong>Build:</strong> ${data.firmware.build}</p>
-      <p><strong>Model:</strong> ${data.firmware.model}</p>
-    `;
-  } else {
-    container.innerText = "Keine Firmware-Daten.";
-  }
-}
+//   if (data && data.firmware) {
+//     container.innerHTML = `
+//       <p><strong>Version:</strong> ${data.firmware.version}</p>
+//       <p><strong>Build:</strong> ${data.firmware.build}</p>
+//       <p><strong>Model:</strong> ${data.firmware.model}</p>
+//     `;
+//   } else {
+//     container.innerText = "Keine Firmware-Daten.";
+//   }
+// }
 
 // Interfaces (Reporting)
 async function loadInterfaces() {
@@ -186,7 +187,7 @@ async function reloadAll() {
   await loadSystemStatus();
   const ok = await authenticate();
   if (!ok) return;
-  await loadDeviceInfo();
+  // await loadDeviceInfo();
   await loadInterfaces();
   await loadAdministration();
   await loadLogs();
