@@ -110,7 +110,9 @@ pytest.ini
 
 ### Node ###
 node_modules/
-Frontend*/*
+Frontendv1.0/
+Frontendv2.0/
+Frontendv3.0/
 OVAs und Infos
 Vmware*
 *.crt
